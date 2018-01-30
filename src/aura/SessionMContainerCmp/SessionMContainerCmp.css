@@ -1,0 +1,13 @@
+.THIS.scrollerSize {
+    height: 100%;
+    width: 100%;
+    border-radius: 1px;
+}
+.THIS.slds_spinner_custom {
+    height: 100%!important;
+    width: 100%!important;
+}
+
+.THIS .inline-edit-trigger{
+    display:none!important;
+}

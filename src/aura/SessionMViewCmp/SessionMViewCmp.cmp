@@ -1,0 +1,115 @@
+<!--This component is used to View data of User enrolled on SessionM Platform-->
+<!--
+    recordId : Account Id of the User
+    objViewUtilityWrapper : Wrapperclass object of ViewUtilityWrapper Class
+    viewCompute : Attribute which is used to show or hide comp button
+    viewSessionMUpdate: Attribute which is used to show or hide update button
+    viewActivities : Attribute which is used to show or hide Activities button
+    hideBack : Attribute which is used to show or hide Back button
+    showView : Attribute which is used to hide or show view component
+    showEmailOutOfSyncMessage:Attribute which shows an warning message on UI if email in account record and sessionm platform are not same
+
+ -->
+    
+    
+<aura:component controller="SessionMViewController" access="global" implements="force:hasRecordId" >
+	
+    <!--Dependencies CompCmp,UpdateCmp,ActivityCmp-->
+	<aura:dependency resource="markup://c:SessionMCompCmp" />
+    <aura:dependency resource="markup://c:SessionMUpdateCmp" />
+    <aura:dependency resource="markup://c:SessionMActivityCmp" />
+    
+    <!--Attribute List-->
+	<aura:attribute name="recordId" type="String" default="{!v.recordId}" access="global" description="Account Id of the User"/>
+	<aura:attribute name="objViewUtilityWrapper" type="Object" description="Wrapperclass object of ViewUtilityWrapper Class" />
+	<aura:attribute name="viewCompute" type="Boolean" default="false" description="Attribute which is used to show or hide comp button" />
+	<aura:attribute name="showView" type="Boolean" default="false" description="Attribute which is used to hide or show view component"  />
+    <aura:attribute name="viewSessionMUpdate" type="Boolean" default="false" description="Attribute which is used to show or hide update button" />
+    <aura:attribute name="viewActivities" type="Boolean" default="false" description="Attribute which is used to show or hide Activities button"  />
+	<aura:attribute name="hideBack" type="Boolean" default="false" description="Attribute which is used to show or hide Back button"   />
+	<aura:attribute name="showEmailOutOfSyncMessage" type="Boolean" default="false" description="Attribute which is used to hide or show Email is Out Of Sync UI Message"  />
+	
+    <!--This handler is used when page loads initially-->
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" description="This event is fired when loads initially" />
+    <aura:handler event="c:SessionMCloseContainerEvent" action="{!c.sessionMCloseContainer}" description="Container event when fired closes all the child component present in container"/>
+
+    <!--Spinner Attribute-->
+    <lightning:spinner aura:id="spinner" class="slds-hide slds_relative" alternativeText="Loading.."/>
+    
+    <aura:if isTrue="{!v.showView}">
+        <div style="width:100%;">
+            <lightning:card iconName="action:user" class="slds-wrap" >
+                
+                <aura:set attribute="title">
+                    <div style="white-space:  pre-line;word-wrap:  break-word;" >
+                    {!$Label.c.Loyalty_Details_Header_label}
+                    </div>
+                </aura:set>			   
+                
+                <aura:if isTrue="{!!empty(v.objViewUtilityWrapper.objSessionMUser.Id)}">
+                   
+                    <div style="width:100%;padding-left:6px;padding-right:6px" class="slds-wrap">
+					<aura:if isTrue="{!v.showEmailOutOfSyncMessage}">
+						<ui:message severity="info" closable="false"  >
+									{!$Label.c.Email_Different_Message_When_Account_Updates}
+						</ui:message>
+					</aura:if>
+					 <br></br>
+                        <div class="slds-wrap" style="width:100%;word-wrap: break-word;">
+                            <force:recordView recordId="{!v.objViewUtilityWrapper.objSessionMUser.Id}" type="FULL"/>
+                        </div>
+                    </div>
+                </aura:if>
+                
+                <aura:set attribute="footer">
+                 
+                  <!--Buttons Update,Comp,Activities,Back-->
+				<lightning:buttonGroup class="slds-wrap slds-align_absolute-center slds-button-group ">
+                   
+					<aura:if isTrue="{!empty(v.objViewUtilityWrapper.networkId)}">
+                        
+						<!--Difference between editor and viewer is access to Transaction Object which makes these two buttons appear/dissapear for editor/viewer-->
+						
+						<div class="slds-p-bottom_xxx-small">	
+						<lightning:button variant="brand"  label="{!$Label.c.View_Compute_Points_Button}" onclick="{!c.viewComputePoints}" class="{!!v.objViewUtilityWrapper.hasAllAccess  &amp;&amp; !v.objViewUtilityWrapper.hasCompAccess ? 'slds-hide' : 'noWrapBtn'}"/>
+						
+						</div>
+					
+                        
+						<div class="slds-p-bottom_xxx-small slds-m-left_xx-small">	
+						<lightning:button variant="brand" label="{!$Label.c.Update_Profile_Button}" onclick="{!c.viewSessionMUpdate}" class="{!!v.objViewUtilityWrapper.hasAllAccess  &amp;&amp; !v.objViewUtilityWrapper.hasCompAccess ? 'slds-hide' : 'noWrapBtn'}"/>
+						
+						</div>
+							
+					</aura:if>
+                    <div class="slds-p-bottom_xxx-small slds-m-left_xx-small">	
+                    <lightning:button variant="brand" class="slds-button  slds-button_brand noWrapBtn" label="{!$Label.c.Activities_Button_Label}" onclick="{!c.viewActivities}"/>
+                    </div>	
+					
+					 <div class="slds-p-bottom_xxx-small slds-m-left_xx-small">
+						<lightning:button variant="neutral"  class="{!v.hideBack ? 'slds-hide' : 'noWrapBtn'}"  label="{!$Label.c.Back_Button}" onclick="{!c.goback}"/>
+						
+                    </div>
+                       
+				</lightning:buttonGroup>
+                </aura:set>
+                
+            </lightning:card>
+        </div>
+    </aura:if>
+    
+    <!--Comping Component-->
+    <aura:if isTrue="{!v.viewCompute}">
+        <div aura:id="CompBody"/>
+    </aura:if>
+    
+    <!--Update Component-->
+    <aura:if isTrue="{!v.viewSessionMUpdate}">
+        <div aura:id="UpdateBody"/>
+    </aura:if>
+    
+    <!--Activity Component-->
+    <aura:if isTrue="{!v.viewActivities}">
+        <div aura:id="ActivityBody"/>
+    </aura:if>
+</aura:component>

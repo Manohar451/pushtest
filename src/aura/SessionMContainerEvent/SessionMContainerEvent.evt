@@ -1,0 +1,6 @@
+<!--This event is called and handled in Parent component that displays view or enroll-->
+
+<aura:event type="APPLICATION" access="global">
+ <aura:attribute name="redirectionContext" type="String" />
+ <aura:attribute name="accountId" type="String"/>
+</aura:event>

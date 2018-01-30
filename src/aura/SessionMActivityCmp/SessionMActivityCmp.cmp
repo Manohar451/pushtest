@@ -1,0 +1,104 @@
+<!--This component is used to view activities of the user-->
+<!--List of Aura Attributes-->
+<!--recordId : Account record Id
+    completeActivityList: Complete list of all activities of the user
+    dataTableHeaders:List of headers that will be displayed on the activity page
+    paginatedActivityList:List of activities that are to be displayed per page
+    isBackDisabled:Attribute which is used to control back button
+    offset:offset value
+    isError: boolean value which indicates if there is an error or not
+    pageSize : Size of the page
+    maxActivitySize : Maximum activity records size per request
+    showActivity : Boolean which controls the visibility of the component-->
+    
+    
+    
+             
+
+<aura:component implements="force:hasRecordId" controller="SessionMActivityController" access="global" >
+    
+    <aura:dependency resource="markup://c:SessionMMessageCmp" />
+    <aura:attribute name="completeActivityList" type="List" default="[]" description="Complete list of all activities of the user"/>
+    <aura:attribute name="dataTableHeaders" type="List" default="[]" description="List of headers that will be displayed on the activity page"/>
+    <aura:attribute name="paginatedActivityList" type="List" default="[]" description="List of activities that are to be displayed per page"/>
+    <aura:attribute name="offset" type="Integer" description="offset value used to display number or records per page" />
+    <aura:attribute name="isError" type="Boolean" default="true" description="boolean value which indicates if there is an error or not"/>
+    <aura:attribute name="pageSize" type="Integer" default="1" description="Size of the page"/>
+    <aura:attribute name="maxActivitySize" type="Integer" default="500" description="Maximum activity records size per request"/>
+    <aura:attribute name="recordId" type="String" default="{!v.recordId}" access="global" description=" Account record Id"/>
+    <aura:attribute name="showActivity" type="Boolean" default="true" description="Boolean which controls the visibility of the component"/>
+    <aura:attribute name="isBackDisabled" type="Boolean" default="false" description="Attribute which is used to control back button"/>
+	
+    <!--This event is handled when the page loads initially-->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" description="Event fired when page loads initially"/>
+
+    <aura:handler event="c:SessionMCloseContainerEvent" action="{!c.sessionMCloseContainer}" description="Container event when fired closes all the child component present in container" />
+    
+    <!--This event is called when user clicks Back Button-->
+    <aura:registerEvent name="SessionMReloadViewEvent" type="c:SessionMReloadViewEvent" description="Event fired when user clicks Back button and redirects to view page"/> 
+    
+    <aura:if isTrue="{!v.showActivity}">
+	<div aura:id="MessageBody"/>
+    <aura:if isTrue="{!!v.isError}">
+        
+            <!--Spinner Component-->
+    		<lightning:spinner aura:id="spinner" class="slds-hide"/>
+            <div style="width:100%;">
+                <lightning:card iconName="action:user" class="slds-wrap" >
+                    
+                    <aura:set attribute="title">
+                        {!$Label.c.Activities_Header}
+                        <p class="slds-text-body_small slds-line-height_reset" style="white-space: pre-line;">{!$Label.c.Activity_Note_For_Max_Records}&nbsp;{!v.maxActivitySize}</p> 
+                    </aura:set>			   
+                    <aura:if isTrue="{!v.completeActivityList.length != 0}">
+                        <lightning:datatable data="{!v.paginatedActivityList }" 
+                                             class="slds-m-top_medium slds-m-bottom_medium preventClick"
+                                             columns="{!v.dataTableHeaders}"
+                                             keyField="index"
+                                             hideCheckboxColumn="true"
+                                             resizeColumnDisabled="true"/>
+                        <aura:set attribute="else">
+                            <ui:message severity="info" closable="false" body="" >
+                                <center>{!$Label.c.No_Activities_Message}</center>
+                            </ui:message>
+                        </aura:set>
+                    </aura:if>
+                    
+                    <aura:set attribute="footer">
+                        
+                        <!--Buttons Previous,Next,Back-->
+                        <lightning:buttonGroup class="slds-wrap slds-align_absolute-center slds-button-group ">
+						<div class="slds-p-bottom_xxx-small">
+                            <lightning:button label="{!$Label.c.Activities_Previous_Button}"   
+                                              onclick="{!c.previous}"
+                                              disabled="{!v.completeActivityList.length == 0 || sub(v.offset,v.pageSize) == 0}"
+                                              variant="brand"
+                                              iconName='utility:back' 
+                                              />
+						</div>
+                            &nbsp;&nbsp;
+                        <div class="slds-p-bottom_xxx-small">    
+						<lightning:button label="{!$Label.c.Activities_Next_Button}"  
+                                              onclick="{!c.next}" 
+                                              disabled="{!v.completeActivityList.length == 0 || v.offset >= v.completeActivityList.length}"
+                                              variant="brand"
+                                              iconName='utility:forward' 
+                                              iconPosition='right'
+                                              />
+						</div>
+                            &nbsp;&nbsp;
+						<div class="slds-p-bottom_xxx-small">
+                            <lightning:button variant="neutral" 
+                                              label="{!$Label.c.Back_Button}" 
+                                              onclick="{!c.goBack}"
+                                              disabled="{!v.isBackDisabled}"
+                                              /> 
+						</div>
+                            &nbsp;&nbsp;
+                        </lightning:buttonGroup>
+                    </aura:set>
+                </lightning:card>
+            </div>
+       </aura:if>
+        </aura:if>
+</aura:component>

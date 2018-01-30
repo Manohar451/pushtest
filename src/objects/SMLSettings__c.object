@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This object contains custom settings for SessionM app</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CleanUpServiceEnable__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is Clean Up Service enabled? Default True</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is Clean Up Service enabled? Default is True. If Marked False - clean up service would not execute.</inlineHelpText>
+        <label>CleanUp Service Enable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CleanUpServiceTimeFrame__c</fullName>
+        <defaultValue>2</defaultValue>
+        <description>Time interval between two consecutive runs of clean of Services</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time interval between two consecutive runs of clean up Services - It is in Hours - Min 1 Max 48.</inlineHelpText>
+        <label>CleanUp Service TimeFrame</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CleanUpServicesRecordsToDelete__c</fullName>
+        <defaultValue>5000</defaultValue>
+        <description>Limit of Number of records to delete when executing cleanup service - Min 1 Max 10000</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Limit of Number of records to delete when executing cleanup service - Min 1 Max 10000</inlineHelpText>
+        <label>CleanUp Services Record To Delete</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailFieldInAccounts__c</fullName>
+        <description>API field name of field that contains user&apos;s email address in Accounts object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API field name of field that contains user&apos;s email address in Accounts object</inlineHelpText>
+        <label>Email Field in Accounts</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EnableEnrollInCommunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EnableEnrollInCommunity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EnableEnrollInCommunity</inlineHelpText>
+        <label>Enable Enroll in Community</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MaxActivityRecords__c</fullName>
+        <defaultValue>500</defaultValue>
+        <description>Max Activity Records to fetch</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max Activity Records to fetch</inlineHelpText>
+        <label>Max Activity Records</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PageSize__c</fullName>
+        <defaultValue>10</defaultValue>
+        <description>Page Size for Activity Screen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Page Size for Activity Screen</inlineHelpText>
+        <label>Page Size</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SessionMTimeOut__c</fullName>
+        <defaultValue>3500</defaultValue>
+        <description>SessionM Time Out in milliseconds</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SessionM Time Out in milliseconds</inlineHelpText>
+        <label>SessionM Time Out</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SessionMtoSalesforceMappingsAPIName__c</fullName>
+        <description>SessionM to Salesforce Mappings API Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SessionM to Salesforce Mappings API Name</inlineHelpText>
+        <label>SessionM to Salesforce Mappings API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SessionM List Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

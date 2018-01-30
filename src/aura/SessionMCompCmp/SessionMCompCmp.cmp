@@ -1,0 +1,117 @@
+<!--This component is used in Comping Points to User-->
+<!--List of Aura Attributes-->
+<!--recordId : Account record Id
+    objCompWrapper: Object which is used at time of initializing page
+    isCompingDisabled:Attribute which is used to indiacte whether Comp button is enabled or not
+    showCompingComponent:Attribute which is used to disable or enable comping button
+    isBackDisabled:Attribute which is used to control back button
+    showMessageComponent:Attribute which is used to disable or enable Message Component-->
+    
+
+    <aura:component implements="force:hasRecordId" access="global" controller="SessionMCompController">
+    
+	<aura:dependency resource="markup://c:SessionMMessageCmp" />
+	
+	<aura:attribute name="recordId" type="String" access="global" default="{!v.recordId}" description="Account record Id"/>
+    <aura:attribute name="objCompWrapper" type="Object" description="Object which is used at time of initializing page"/>
+    <aura:attribute name="isCompingDisabled"  type="Boolean" description="Attribute which is used to indiacte whether Comp button is enabled or not"/>
+    <aura:attribute name="showCompingComponent"  type="Boolean" default="true" description="Attribute which is used to disable or enable comping button"/>
+    <aura:attribute name="showMessageComponent"  type="Boolean" default="true" description="Attribute which is used to disable or enable Message Component"/>
+    <aura:attribute name="isBackDisabled"  type="Boolean" description="Attribute which is used to control back button" default="true"/>
+	
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:SessionMCloseContainerEvent" action="{!c.sessionMCloseContainer}" description="Container event when fired closes all the child component present in container" />
+
+    <!--This event is called when we click on Back Button i.e it redirects to view component-->
+	<aura:registerEvent name="reloadViewEvent" type="c:SessionMReloadViewEvent" description="This event is fired when user clicks Back Button and redirects to View page" /> 
+     
+    <!--This event is called when comping is success and redirects to updatedview component-->
+        <aura:registerEvent name="SessionMTransactionCountEvent" type="c:SessionMTransactionCountEvent" description="This event is fired when user is succesfully added/removed points and redirects to view with updated points" />
+  
+   
+     <!--This is spinner attribute which-->
+	 <lightning:spinner aura:id="spinner" class="slds-hide"/>
+	 
+    <aura:if isTrue="{!v.showCompingComponent}">
+    
+       <aura:if isTrue="{!v.showMessageComponent}">
+        <div aura:id="MessageBody" />
+       </aura:if>
+       
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size--1-of-1">
+                <lightning:card iconName="action:user" class="slds-wrap">
+                    <aura:set attribute="title">
+                        <div style="word-wrap: break-word;">
+                            {!$Label.c.Loyalty_Details_Header_label}
+                        </div>
+                    </aura:set>
+                     
+						<aura:if isTrue="{!v.objCompWrapper.isSuspendedSessionMUser}">
+								<ui:message severity="error" closable="false"  >
+									{!$Label.c.Comping_Error_message} 
+								</ui:message> 
+						</aura:if>
+                    
+                       <aura:if isTrue="{!v.objCompWrapper.isInSufficientPrivilege}">
+								<ui:message severity="error" closable="false"  >
+									{!$Label.c.Insufficient_Priviledges} 
+								</ui:message> 
+						</aura:if>
+                    
+                     <!--Input field Points-->                 
+                    <div class="slds-form-element slds-p-left_x-small slds-p-right_x-small">
+                        <ui:inputNumber aura:id="loyalityPoints" label="{!$Label.c.PointsComponentPointsFieldLabel}" 
+                                        class="slds-input slds-size_1-of-2" 
+                                        labelClass="slds-form-element__label slds-size_1-of-2" 
+                                        required="true"
+                                        disabled="{!empty(v.objCompWrapper)}"
+                                        value="{!v.objCompWrapper.transactobj.smsfsc__LoyaltyPoints__c}" 
+                                       />
+                        
+                        
+       
+                        
+                        <!--Input ReasonCodes--> 
+                        <ui:inputSelect aura:id="reasonCodes" 
+                                        class="slds-select slds-size_1-of-2"  
+                                        disabled="{!empty(v.objCompWrapper)}"
+                                        required="true"
+                                        labelClass="slds-form-element__label slds-size_1-of-2"
+                                        label="{!$Label.c.PointsComponent_Picklist_Field_Label}"
+                                        value="{!v.objCompWrapper.transactobj.smsfsc__ReasonCodes__c}"/>
+                        
+                        
+                        
+                        
+                    </div>
+                    <br></br>
+                    
+                    <!--Buttons Comp and Back-->
+                    <lightning:buttonGroup class="slds-wrap slds-align_absolute-left slds-button-group slds-p-left_x-small">
+                        <div class="slds-p-bottom_xxx-small">
+                            <lightning:button variant="brand" 
+                                              label="{!$Label.c.PointsComponent_CompPoints_Button_label}" 
+                                              onclick="{!c.validateAndCompute }" 
+                                              disabled="{!v.isCompingDisabled || v.objCompWrapper.isInSufficientPrivilege}" />
+                            
+                        </div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div>
+                            <lightning:button variant="neutral" 
+                                              label="{!$Label.c.Back_Button}" 
+                                              onclick="{!c.goBack}" 
+                                              disabled="{!v.isBackDisabled}" /> 
+                            
+                        </div>
+                    </lightning:buttonGroup>
+                    
+                    
+                    
+                </lightning:card>
+                
+            </div>
+        
+        </div>
+	</aura:if>
+</aura:component>

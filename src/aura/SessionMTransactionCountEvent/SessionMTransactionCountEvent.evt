@@ -1,0 +1,6 @@
+<!--This event is used when points are succesfully added to the user-->
+
+<aura:event type="APPLICATION" access="global">
+ <aura:attribute name="transactionCount" type="Object"/>
+ <aura:attribute name="accountId" type="String"/>
+</aura:event>

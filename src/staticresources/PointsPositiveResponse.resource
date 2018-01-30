@@ -1,0 +1,1 @@
+{ "status": "ok", "user": { "id": "9a4ccf04-bff1-11e7-9f1b-c8342c95a502", "available_points": 530, "test_points": 0 } }

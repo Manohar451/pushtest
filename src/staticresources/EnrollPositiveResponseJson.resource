@@ -1,0 +1,24 @@
+{  
+    "status":"ok",
+    "user":{  
+        "id":"6a89beac-a0dd-11e4-93f6-ddb808912e2c",
+        "external_id":"1284111",
+        "email":"john.smith@test.com",
+        "identifiers":[  
+            {  
+                "external_id":"1234abcd",
+                "external_id_type":"salesforce"
+            }
+        ],
+        "first_name":"John",
+        "last_name":"Smith",
+        "gender":"m",
+        "dob":"1980-01-01",
+        "account_status":"good",
+        "address":"7 Tremont Street",
+        "city":"Boston",
+        "state":"MA",
+        "zip":"02021",
+        "country":"USA"
+    }
+}

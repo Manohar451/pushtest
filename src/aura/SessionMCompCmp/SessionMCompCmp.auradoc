@@ -1,0 +1,6 @@
+<aura:documentation>
+    <aura:description>This component is used in Adding/Removing Points to User</aura:description>
+	<aura:example name="CompingComponent" ref="smsfsc:SessionMCompCmp" label="Comping component">
+		SessionM comping component
+	</aura:example>
+</aura:documentation>

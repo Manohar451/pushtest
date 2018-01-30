@@ -1,0 +1,4 @@
+<aura:documentation>
+	<aura:description>This Component is used by user to Configure App Settings i.e URL,Key,Secret etc</aura:description>
+	
+</aura:documentation>

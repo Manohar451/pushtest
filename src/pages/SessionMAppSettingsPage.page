@@ -1,0 +1,31 @@
+<!--This page is displayed when user installspackage and click on configure in installed packages-->
+<!--This page is created by Adding SessionMAppSettingsCmp in lighning out App-->
+<apex:page sidebar="false" showHeader="true" >
+    <apex:includeLightning />
+    
+    <apex:outputPanel rendered="{!JSENCODE($Network.Name) == ''}">
+        <apex:includeScript value="/support/console/36.0/integration.js"/>
+    </apex:outputPanel>
+
+    <div id="appSettingsDivId" >
+    </div>
+       <style>
+        .preventClick {
+            pointer-events: none!important;
+        }
+       </style>
+       
+       <script>
+          $Lightning.use("smsfsc:SessionMAppSettingsApp", function() {
+            $Lightning.createComponent("smsfsc:SessionMAppSettingsCmp",{},
+            "appSettingsDivId",
+            function(cmp) {
+                document.getElementById("saveBtn").addEventListener("click", function(){
+                    this.classList.add('preventClick');
+                    setTimeout(function(){document.getElementById("saveBtn").classList.remove('preventClick'); },1000);
+                });
+            });
+          });
+      </script>
+      
+</apex:page>

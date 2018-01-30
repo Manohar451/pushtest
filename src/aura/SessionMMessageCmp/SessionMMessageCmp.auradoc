@@ -1,0 +1,4 @@
+<aura:documentation>
+	<aura:description>This is a Generic component for UI Messages and is being used across classic and Salesforce mobile themes</aura:description>
+	
+</aura:documentation>

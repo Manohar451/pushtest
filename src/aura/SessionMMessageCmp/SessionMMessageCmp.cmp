@@ -1,0 +1,35 @@
+<!--This is the Generic Message component used for UI Messages-->
+
+
+
+<aura:component access="GLOBAL" controller="Message">
+    <!--Message class Object-->
+	<aura:attribute name="MessageInfo" type="Object" access="GLOBAL" description="Message class Object"/>
+    <!--Init handler-->
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" description="Event fired when page loads initially" />
+	
+    <!--Fetch Experience type eg classic,lightning,mobile-->
+	<div aura:id="messageId"  style="{!v.MessageInfo.experienceType == 'SF1' ? 'height: 100%' : 'height: 0.30rem'}">
+	   <div class="{!v.MessageInfo.experienceType == 'SF1' ? 'slds-region_narrow slds-notify_container slds-is-relative' : 'slds-notify_container slds-is-relative'}" style="word-wrap: break-word;">
+          <!--toast theme success,info,error-->
+	      <div class="{!'slds-notify slds-notify_toast slds-theme_'+ v.MessageInfo.msgType}" role="alert" style="word-wrap: break-word;">
+	         <span class="slds-assistive-text">{!v.MessageInfo.msgText}</span>
+              
+             <!--Icons to be displayed on message-->
+	         <span class="{!'slds-icon_container slds-m-right_small slds-no-flex slds-align-top slds-icon-utility-'+ v.MessageInfo.msgType}" title="Description of icon when needed">
+	            <lightning:icon iconName="{!'utility:' + v.MessageInfo.msgType}" variant="inverse" class="{!'slds-icon_container slds-m-right_small slds-no-flex slds-align-top  slds-icon-utility-'+ v.MessageInfo.msgType}"/>
+	         </span>
+	         <div class="slds-notify__content">
+	            <h2 class="{!v.MessageInfo.experienceType == 'SF1' ? 'slds-wrap slds-text-heading_x-small' : ' slds-text-heading_x-small'}">{!v.MessageInfo.msgText}</h2>
+	         </div>
+	         <button type="button" class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close" onclick="{!c.closeUIMessage}">
+	            <div style="height:60%;width:40%;padding-top: 5px;">
+	               <lightning:icon iconName="utility:close" size="small" variant="inverse"/>
+	            </div>
+	            <span class="slds-assistive-text">Close</span>
+	         </button>
+	      </div>
+	   </div>
+	</div>
+		
+</aura:component>

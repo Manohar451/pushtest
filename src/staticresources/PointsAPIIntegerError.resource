@@ -1,0 +1,1 @@
+ "status": "error", "errors": { "transaction": { "points": "must be an integer" }, "code": "validation" } }

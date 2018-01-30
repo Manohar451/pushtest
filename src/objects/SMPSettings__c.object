@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This object contains protected custom settings for SessionM app</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>APIEndpoint__c</fullName>
+        <description>Endpoint for SessionM API</description>
+        <externalId>false</externalId>
+        <label>API Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>APIKey__c</fullName>
+        <description>API Key</description>
+        <externalId>false</externalId>
+        <label>API Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APISecret__c</fullName>
+        <description>API Secret</description>
+        <externalId>false</externalId>
+        <label>API Secret</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APIVersion__c</fullName>
+        <description>API Version</description>
+        <externalId>false</externalId>
+        <label>API Version</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CleanUpServiceLastTimeRun__c</fullName>
+        <description>Last Run time of cleanup service for deleting SessionM User Records -- Technical Field System modifies It It should be modified by the end user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Run time of cleanup service for deleting SessionM User Records -- Technical Field System modifies It It should be modified by the end user.</inlineHelpText>
+        <label>CleanUp Service Last Time Run</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>SessionM Protected Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

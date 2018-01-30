@@ -1,0 +1,76 @@
+<!--This component is used to update the users data-->
+<!-- List of Attributes 
+     recordId : record Id of the user
+     SessionMUser : SessionMUser Object
+     makeDisabled : Boolean to enable or disble Back and Save button
+     showUpdate : Hide or Show update component depending on the boolean value
+     showMessage : Hide or show Message component
+     hasError : Boolean which indicates if there is any error or not-->
+
+
+<aura:component controller="SessionMUpdateController" access="global" implements="force:hasRecordId">
+	<aura:dependency resource="markup://c:SessionMMessageCmp" />
+    
+	<aura:attribute name="recordId" type="String" default="{!v.recordId}" access="global" description="record Id of the user"/>
+	<aura:attribute name="SessionMUser" type="SessionMUser__c" default="{ 'sobjectType': 'SessionMUser__c' }" description="SessionMUser Object" />
+    <aura:attribute name="makeDisabled" type="Boolean" description="Boolean to enable or disble Back and Save button" />
+    <aura:attribute name="showUpdate" type="Boolean" default="true" description="Hide or Show update component depending on the boolean value"/>
+	<aura:attribute name="showMessage" type="Boolean" default="true" description=" Hide or show Message component"/>
+	<aura:attribute name="hasError" type="Boolean" default="false" description="Boolean which indicates if there is any error or not"/>
+	<aura:attribute name="isInSuffiecientPrivilege" type="Boolean" default="true" description="Boolean which indicates if there is any error or not"/>
+
+    <!--This event is called when page loads initially-->
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" description="Event fired when page loads initially" />
+    
+    <!--This event is called when user data is saved successfully-->
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.doUpdate}" description="This event is fired on succesful save"/>
+    <aura:handler event="c:SessionMCloseContainerEvent" action="{!c.sessionMCloseContainer}" description="" />
+
+    <!--This event is fired when Back Button is clicked-->
+    <aura:registerEvent name="SessionMReloadViewEvent" type="c:SessionMReloadViewEvent" description="Event fired when update is succesful"  />
+    <aura:registerEvent name="SessionMContainerEvent" type="c:SessionMContainerEvent" description="Event fired Back button is clicked" />
+
+    <aura:if isTrue="{!v.showUpdate}">
+		
+		<aura:if isTrue="{!v.showMessage}">
+			<div aura:id="MessageBody"/>
+		</aura:if>
+
+        <div style="width:100%;">
+            <lightning:card iconName="action:user" 
+                            class="slds-wrap" >
+            <aura:set attribute="title">
+                {!$Label.c.Update_Component_Header}
+            </aura:set>
+           
+			<aura:if isTrue="{!!v.isInSuffiecientPrivilege}">
+						<div style="padding-left:6px;" >
+							<ui:message severity="error" closable="false"  >
+							  {!$Label.c.Insufficient_Priviledges}
+							</ui:message>
+						</div>
+				
+				<aura:set attribute="else">
+					<aura:if isTrue="{!!empty(v.SessionMUser.Id)}">
+						 <div style="width:100%;padding-left:6px;padding-right:6px" class="slds-wrap">
+						   <div class="updateCmp slds-wrap" style="width:100%;word-wrap: break-word;">
+								<lightning:spinner aura:id="spinner" class="slds-hide"/>
+								<force:recordEdit aura:id="recordView" recordId="{!v.SessionMUser.Id}"/>
+						   </div>
+						</div>
+					</aura:if> 
+				</aura:set>
+            </aura:if>     
+            <aura:set attribute="footer">
+                
+                <!--Buttons Back and Save-->
+                <div class="slds-align_absolute-center">
+                    <lightning:button disabled="{!empty(v.SessionMUser.Id) || v.makeDisabled || !v.isInSuffiecientPrivilege}" class="slds-button slds-button_brand" label="{!$Label.c.Save_Button}" onclick="{!c.saveRecord}"/>
+                    <lightning:button disabled="{!v.makeDisabled}" class="slds-button slds-button_neutral" label="{!$Label.c.Back_Button}" onclick="{!c.goBack}"/>
+                 </div>
+            </aura:set>
+                
+            </lightning:card>
+        </div>
+    </aura:if>
+</aura:component>

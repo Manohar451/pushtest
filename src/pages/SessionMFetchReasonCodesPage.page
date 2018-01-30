@@ -1,0 +1,19 @@
+<!--This page is displayed when user clicks on ReasonCode for Comping Button-->
+<!--This Page is created by adding SessionMFetchReasonCodeCmp to lightning Out App-->
+
+<apex:page controller="SessionMFetchReasonCodesController"  showHeader="true" sidebar="false">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("smsfsc:SessionMFetchReasonCodesApp", function() {
+          $Lightning.createComponent("smsfsc:SessionMFetchReasonCodesCmp",
+           {},
+          "lightning",
+          function(cmp) {
+             
+          });
+        });
+    </script>
+</apex:page>

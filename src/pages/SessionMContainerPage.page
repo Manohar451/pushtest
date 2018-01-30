@@ -1,0 +1,77 @@
+<!--This page is added in classic console to view loyality data-->
+<!--This page is created by Adding SessionMContainerCmp in lighning out App-->
+
+<apex:page docType="html-5.0" sidebar="false" standardController="Account">
+    <apex:includeLightning />
+    
+    <!-- Custom CSS for distortion in force:recordEdit component in Classic,SF1 -->
+    <style>
+        .updateCmp .select{
+        	margin-left: 1%!important;
+        }
+        .updateCmp input[type='checkbox'] { 
+        	display: block!important;
+        }
+        
+        .scrollable{
+        	height: 10em!important;
+        	overflow: scroll!important;
+    		overflow-x: hidden!important;
+        }
+        
+        .updateCmp .datePicker-openIcon,.updateCmp .timePicker-openIcon{
+        	display:none!important;
+        }
+        
+        
+		.updateCmp .input, .updateCmp .select {
+			background-color: rgb(255, 255, 255)!important;
+			border: 1px solid rgb(217, 219, 221)!important;
+			border-radius: .25rem!important;
+			width: 100%!important;
+			-webkit-transition: border .1s linear,background-color .1s linear!important;
+			transition: border .1s linear,background-color .1s linear!important;
+			display: inline-block!important;
+			padding: 0 1rem 0 .75rem!important;
+			line-height: 1.875rem!important;
+			min-height: calc(1.875rem + (1px * 2))!important;
+		}
+    </style>
+    <apex:outputPanel rendered="{!JSENCODE($Network.Name) == ''}">
+        <apex:includeScript value="/support/console/36.0/integration.js"/>
+    </apex:outputPanel>
+    
+    <apex:form >
+    <div id="comp" />
+            
+           <script>
+              $Lightning.use("smsfsc:SessionMContainerApp", function() {
+                $Lightning.createComponent("smsfsc:SessionMContainerCmp",{recordId : '{!JSENCODE(Account.Id)}'},
+                "comp",
+                function(cmp) {
+                    /*Salesforce1 - iOS devices Scroll Fix*/
+                    var ua=navigator.userAgent;
+                    if(ua.indexOf('{!JSENCODE("iPhone")}')!=-1||ua.indexOf('{!JSENCODE("iPad")}')!=-1){ 
+                        
+                        var children = Array.prototype.slice.call(document.body.children), 
+                        placeholder = document.createElement('{!JSENCODE("section")}'), 
+                        fragment = document.createDocumentFragment(), 
+                        styles, 
+                        width, 
+                        height; 
+                        children.forEach(function(c){fragment.appendChild(c);}); 
+                        placeholder.appendChild(fragment); 
+                        styles = [ 
+                        '{!JSENCODE("width:100%;")}', 
+                        '{!JSENCODE("height:")}', (window.screen.height - 42), '{!JSENCODE("px;")}', 
+                        '{!JSENCODE("position: absolute; overflow: auto; -webkit-overflow-scrolling: touch")}'
+                        ].join(''); 
+                        placeholder.style.cssText = styles; 
+                        document.body.appendChild(placeholder);  
+                    } 
+                });
+              });
+          </script>
+      </apex:form>
+      
+</apex:page>

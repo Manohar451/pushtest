@@ -1,0 +1,76 @@
+<!--This Component is Parent or Conatiner Component with SessionM Icon-->
+<!--List of Attributes-->
+<!--
+     recordId : Account Id of the user
+	 errorMsg : Error Message to be diplayed
+     hideBack : Boolean which is used to hide or show Back Button
+     isError : Boolean which it true is there is any Error
+     showView : Boolean which is used to control visibility of View Component
+     viewCompute : Boolean which is used to control visibility of Comping Component
+     viewSessionMUpdate : Boolean which is used to control visibility of Update Component
+     viewActivities : Boolean which is used to control visibility of Activity Component 
+     showEnroll:Boolean which is used to control visibility of Enroll component
+
+-->
+     
+
+
+
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,forceCommunity:layout,force:hasRecordId,force:lightningQuickAction,flexipage:availableForRecordHome,force:hasSObjectName"  access="global" controller="SessionMContainerController">  
+    
+    <aura:dependency resource="markup://c:SessionMMessageCmp" />
+    <aura:dependency resource="markup://c:SessionMViewCmp" />
+    <aura:dependency resource="markup://c:SessionMEnrolCmp" />
+    
+	<aura:attribute name="recordId" type="String" default="{!v.recordId}" access="global" description="Account Id of the user"/>
+	<aura:attribute name="errorMsg" type="String" default="" description="Error Message to be diplayed" />
+    <aura:attribute name="hideBack" type="Boolean" default="false" description="Boolean which is used to hide or show Back Button" />
+    <aura:attribute name="isError" type="Boolean" default="true" description="Boolean which it true is there is any Error"/>
+    <aura:attribute name="showView" type="Boolean" default="false" description="Boolean which is used to control visibility of View Component"  />
+
+    <aura:attribute name="showEnroll" type="Boolean" default="false" description="Boolean which is used to control visibility of Enrol Component"  />
+
+    <aura:attribute name="viewCompute" type="Boolean" default="false" description="Boolean which is used to control visibility of Comping Component" />
+    <aura:attribute name="viewSessionMUpdate" type="Boolean" default="false" description="Boolean which is used to control visibility of Update Component" />
+    <aura:attribute name="viewActivities" type="Boolean" default="false" description="Boolean which is used to control visibility of Activity Component" />    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"  />
+    
+    <!--Main container event or Parent Component Event-->
+    <aura:handler event="c:SessionMContainerEvent" action="{!c.sessionMContainerEventHandler}" description="Event fired to reload container component" />
+    <!--Event which is used to redirect to ViewComponent-->
+	<aura:handler event="c:SessionMReloadViewEvent" action="{!c.sessionMReloadViewEventHanlder}" description="Event fired when user clicks back button" />
+    <!--Event which is fired when comping is succesfully done-->
+    <aura:handler event="c:SessionMTransactionCountEvent" action="{!c.checkTransactionCountAndRedirect}" description="Event fired when user add/remove points succesfully"/>
+	
+    <aura:handler event="force:refreshView" action="{!c.refreshContainer}" description="Event that reloads the page view" />
+
+    <aura:registerEvent name="SessionMCloseContainerEvent" type="c:SessionMCloseContainerEvent" description="Container event when fired closes all the child component present in container" />
+
+    <!--Message Component-->
+    <div aura:id="MessageBody"/>
+
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <lightning:spinner aura:id="spinner" class="slds-hide slds_relative" alternativeText="Loading.."/>
+    <aura:if isTrue="{!!v.isError}">
+        <aura:if isTrue="{!v.errorMsg !=''}">
+           
+            <lightning:card iconName="action:user" class="slds-wrap">
+                <aura:set attribute="title">
+                    <div style="word-wrap: break-word;">
+                        {!$Label.c.Loyalty_Details_Header_label}
+                    </div>
+                </aura:set>
+                <ui:message severity="error" closable="false" body="" >
+                    {!v.errorMsg}<br></br>
+                </ui:message>	 
+				<aura:if isTrue="{!!v.hideBack}">
+						<lightning:button class="slds-wrap slds-no-flex slds-align_absolute-center slds-m-top--medium slds-button  slds-button_neutral" label="{!$Label.c.Back_Button}" onclick="{!c.goback}"/>
+				</aura:if>
+            </lightning:card>
+        </aura:if>
+    </aura:if>
+
+    <div aura:id="viewEnrollContentBody"/>
+</aura:component>

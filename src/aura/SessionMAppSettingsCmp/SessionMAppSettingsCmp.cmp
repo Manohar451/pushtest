@@ -1,0 +1,123 @@
+<!--This Component is used by user to Configure App Settings-->
+<!--List Attributes-->
+<!--
+     isEditMode : Boolean which is used to make the fields editable
+     configWrapper : Wrapper Object for SettingsUtilityWrapper class
+-->
+
+
+<aura:component access="GLOBAL" controller="SessionMAppSettingsController">
+   <aura:dependency resource="markup://c:SessionMMessageCmp" />
+   
+   <aura:attribute name="isEditMode" type="Boolean" default="true" description="Boolean which is used to make the fields editable"/>
+   <aura:attribute name="configWrapper" type="Object" description="Wrapper Object for SettingsUtilityWrapper class"/>
+   
+    <!--Handler for init function-->
+   <aura:handler name="init" action="{!c.doInit}" value="{!this}"  descrption="Method fired when page loads initailly"/>
+   
+    <!--Message Component-->
+   <div aura:id="MessageBody" />
+   <form>
+       
+	   <div class="slds-border_left slds-border_top slds-border_right slds-border_bottom">
+		  <div class="slds-page-header">
+			 <div class="slds-grid slds-wrap">
+				<div class="slds-col slds-has-flexi-truncate">
+				   <div class="slds-media slds-no-space slds-grow">
+					  <div class="slds-media__figure">
+						 <lightning:icon iconName="utility:settings" alternativeText="SessionM Settings" />
+					  </div>
+					  <!--This component is used for icon and the Title of the Page-->
+					  <div class="slds-media__body">
+						 <h1 class="slds-page-header__title slds-truncate slds-align-middle">{!$Label.c.App_Settings_Main_Header}</h1>
+						 <p class="slds-text-body_small slds-line-height_reset">{!$Label.c.App_Settings_Sub_Header}</p>
+					  </div>
+				   </div>
+				</div>
+				<!--This component is used to display buttons like Edit,Back,Save,Cancel-->                  
+				<!--This block checks the condition on which edit and save should be enabled-->
+				<lightning:button label="{!$Label.c.Edit_Button}" class="{!v.isEditMode ? 'slds-m-top--medium slds-show' : 'slds-hide'}"  variant="neutral"  disabled="{!!v.configWrapper.hasNecessaryAccess}" onclick="{!c.allowEdit}"/>
+				<lightning:button label="{!$Label.c.Back_Button}" class="{!v.isEditMode ? 'slds-m-top--medium slds-show' : 'slds-hide'}" variant="neutral" onclick="{!c.goBack}" />
+				<div id="saveBtn" class="slds-m-right--xx-small slds-m-top--medium">
+				   <lightning:button label="{!$Label.c.Save_Button}" class="{!v.isEditMode ? 'slds-hide' : 'slds-show'}" variant="brand" onclick="{!c.save}" />
+				</div>
+				<lightning:button label="{!$Label.c.Cancel_Button}" class="{!v.isEditMode ? 'slds-hide' : 'slds-m-top--medium slds-show'}" variant="neutral" onclick="{!c.cancel}" />
+			 </div>
+		  </div>
+           
+		  <div class="slds-grid slds-wrap slds-grid_pull-padded">
+			 <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--5-of-6 slds-large-size--6-of-12">
+				<div class="slds-color__background_white-11 slds-m-top_medium slds-m-left_medium slds-m-right_medium slds-m-bottom_medium slds-grid">
+				   <div class="slds-box slds-p-top_large slds-m-top_medium slds-col">
+					  <div class="slds-text-heading_medium">{!$Label.c.App_Settings_Protected_Settings_Label}</div>
+					  <div class="slds-form--stacked">
+						 <br></br>
+						 <!---API EndPoint Input component-->
+						 <div title="{!$Label.c.Remote_Site_Settings_Note}">
+							<ui:inputText aura:id="smsfsc__APIEndpoint__c" label="{!$Label.c.API_Endpoint_Label}" class="slds-input"   disabled="{!v.isEditMode}" value="{!v.configWrapper.protectedCustomSettings.smsfsc__APIEndpoint__c}" required="true"  />
+						 </div>
+						 <br></br>
+						 <!---API Key Input component-->
+						 <div title="{!$Label.c.API_Key_HelpText}">
+							<ui:inputSecret class="slds-input" aura:id="smsfsc__APIKey__c" label="{!$Label.c.API_Key_Label}"  disabled="{!v.isEditMode}" value="{!v.configWrapper.protectedCustomSettings.smsfsc__APIKey__c}" required="true"   />
+						 </div>
+						 <br></br>
+						 <!---API Secret Input component-->
+						 <div title="{!$Label.c.API_Secret_Helptext}">
+							<ui:inputSecret class="slds-input" aura:id="smsfsc__APISecret__c" label="{!$Label.c.API_Secret_Label}"  value="{!v.configWrapper.protectedCustomSettings.smsfsc__APISecret__c}" disabled="{!v.isEditMode}"  required="true" />
+						 </div>
+						 <br></br>
+						 <div title="{!$Label.c.API_Version_Helptext}">
+							<!---API Version Input component-->
+							<ui:inputText class="slds-input" aura:id="smsfsc__APIVersion__c" label="{!$Label.c.API_Version_Label}"  disabled="{!v.isEditMode}" value="{!v.configWrapper.protectedCustomSettings.smsfsc__APIVersion__c}"  required="true"   />
+						 </div>
+						 <br></br>
+					  </div>
+				   </div>
+				</div>
+			 </div>
+              
+			 <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--3-of-6 slds-large-size--6-of-12">
+				<div class="slds-color__background_white-11 slds-m-top_medium slds-m-left_medium slds-m-right_medium slds-m-bottom_medium slds-grid">
+				   <div class="slds-box slds-p-top_large slds-m-top_medium slds-col">
+					  <div class="slds-text-heading_medium">{!$Label.c.App_Settings_List_Settings_Label}</div>
+					  <div class="slds-form--stacked">
+						 <br></br>
+						 <div title="{!$Label.c.Email_Field_HelpText}">
+							<!---API name of Email Field in Accounts object Input component-->
+							<ui:inputText class="slds-input" aura:id="smsfsc__EmailFieldInAccounts__c" label="{!$Label.c.API_EmailField_Label}"  value="{!v.configWrapper.listCustomSettings.smsfsc__EmailFieldInAccounts__c}" disabled="{!v.isEditMode}" required="true" />
+                             
+						 </div>
+						 <br></br> 
+						 <!---API name of Protected CustomMetadatatype Input component-->
+						 <div title="{!$Label.c.Custom_Metadata_Type_Helptext}">
+							<ui:inputText class="slds-input" aura:id="smsfsc__SessionMtoSalesforceMappingsAPIName__c" label="{!$Label.c.CustomMetadataType_API_Label}"  value="{!v.configWrapper.listCustomSettings.smsfsc__SessionMtoSalesforceMappingsAPIName__c}" disabled="{!v.isEditMode}" required="true" />
+						 </div>
+						 <br></br>
+						 <div title="{!$Label.c.Activity_PageSize_HelpText}">
+							<ui:inputNumber class="slds-input" aura:id="smsfsc__PageSize__c"  label="{!$Label.c.Page_Size_Label}" value="{!v.configWrapper.listCustomSettings.smsfsc__PageSize__c}" disabled="{!v.isEditMode}" required="true" />
+						 </div>
+						 <br></br>
+                          
+                          <div title="{!$Label.c.Max_Activity_Records_HelpText}">
+							<ui:inputNumber class="slds-input" aura:id="smsfsc__MaxActivityRecords__c"  label="{!$Label.c.Max_Activity_Records_Label}" value="{!v.configWrapper.listCustomSettings.smsfsc__MaxActivityRecords__c}" disabled="{!v.isEditMode}" required="true"  />
+						 </div>
+                          
+						 <br></br>
+                          <div title="{!$Label.c.SessionM_TimeOut_HelpText}">
+							<ui:inputNumber class="slds-input" aura:id="smsfsc__SessionMTimeOut__c"  label="{!$Label.c.SessionM_TimeOut_Label}" value="{!v.configWrapper.listCustomSettings.smsfsc__SessionMTimeOut__c}" disabled="{!v.isEditMode}" required="true"  />
+						 </div>
+						 <br></br>
+						 <lightning:input type="checkbox" label="{!$Label.c.Enable_Enroll_in_Community}" disabled="{!v.isEditMode}" name="{!$Label.c.Enable_Enroll_in_Community}" checked="{!v.configWrapper.listCustomSettings.smsfsc__EnableEnrollInCommunity__c}"/>
+						 <br></br>
+						 <lightning:button label="{!$Label.c.ReasonCode_Button_Label}" class="slds-m-top--medium" variant="neutral" onclick="{!c.fetchReasonCodePickListValues}" disabled="{!!v.configWrapper.protectedCustomSettingsExist}" />
+					  </div>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+	   </div>
+       
+       
+	</form>
+</aura:component>

@@ -1,0 +1,14 @@
+.THIS .noWrapBtn {
+	white-space: nowrap!important;
+}
+
+.THIS .preventClick .slds-table{
+    pointer-events: none!important;
+}
+
+.THIS .preventClick .slds-truncate {
+    overflow: inherit!important;
+    text-overflow: inherit!important;
+    white-space: pre-line!important;
+    word-wrap: break-word!important;
+}

@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>This App is used to display Configuration Page</aura:description>
+	<aura:example name="ExampleName" ref="exampleComponentName" label="Label">
+		Example Description
+	</aura:example>
+</aura:documentation>

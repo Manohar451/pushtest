@@ -1,0 +1,1 @@
+{ "status": "error", "errors": { "code": "user_not_found", "message": "user not found" } }

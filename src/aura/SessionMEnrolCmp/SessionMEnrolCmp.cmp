@@ -1,0 +1,98 @@
+<!--This Component is Used to Show Enroll Component-->
+<!--List of Attributes-->
+<!--
+     enrollWrapper : Wrapper Object of EnrollUtilityWrapper
+     recordId : AccountId of the Object
+     isLoading : Boolean that controlls the Spinner Attribute
+     showMessage:Boolean that hides or show message components
+     showEnroll:Boolean that controls visibility of enroll component
+
+-->
+ 
+
+<aura:component controller="SessionMEnrollController" implements="force:hasRecordId"  access="global" >
+	
+    <aura:attribute name="enrollWrapper" type="Object" description="Wrapper Object of EnrollUtilityWrapper"/>
+    <aura:attribute name="recordId" type="String" default="{!recordId}"  access="global" description="AccountId of the Object" />
+	<aura:attribute name="isLoading" type="Boolean" default="false" description="Boolean that controlls the Spinner Attribute" /> 
+	<aura:attribute name="showMessage" type="Boolean" default="true" description=" Hide or show Message component"/>
+	
+	<aura:attribute name="showEnroll" type="Boolean" default="false" description="Boolean which is used to control visibility of Enrol Component"  />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" description="This event is fired when loads initially"   />   
+   
+    <!--Event fired on Succesful Enrollment-->
+	<aura:registerEvent name="SessionMReloadViewEvent" type="c:SessionMReloadViewEvent" description="This event is fired when user succesfully enrolls on SessionM platform" />
+    <!--This event refreshes the Entire View-->
+
+    <aura:handler event="c:SessionMCloseContainerEvent" action="{!c.sessionMCloseContainer}" description="Container event when fired closes all the child component present in container" />
+  <!-- SHOW ENROLL COMPONENT -->
+  
+		
+		<aura:if isTrue="{!v.showEnroll}">
+			<!-- CUSTOM UI MESSAGE BLOCK USING SLDS MIMICKING LIGHTNING TOAST MESSAGE FOR SALESFORCE CLASSIC -->	
+			<aura:if isTrue="{!v.showMessage}">
+				<div aura:id="MessageBody" />
+			</aura:if>
+			
+		   <!-- LIGHTNING CARD USED FOR ENROLLMENT -->	
+		   <div style="height:100%;" class="slds-wrap">
+				<lightning:card iconName="action:user" class="slds-wrap">
+					<aura:set attribute="title">
+							<div style="word-wrap: break-word;">
+							{!$Label.c.Loyalty_Details_Header_label}
+							</div>
+					</aura:set>
+				  
+					<!-- LOADING SPINNER -->
+					<aura:if isTrue="{!v.isLoading}">
+						 <lightning:spinner aura:id="mySpinner" class="slds-show"/>
+					</aura:if>
+				
+					<!-- ERROR MESSAGE IF EMAIL NOT ENTERED -->   
+					<aura:if isTrue="{!!v.enrollWrapper.isEmailPresent}">
+						<div style="padding-left:6px;" >
+							<ui:message severity="error" closable="false"  >
+							   {!$Label.c.Enroll_Email_Not_Present_Partial_Msg}&nbsp;&nbsp;{!v.enrollWrapper.accountEmailLabel}&nbsp;&nbsp;{!$Label.c.Enroll_Email_Not_Present_Msg_End}<br></br>
+								
+							</ui:message>
+						</div>
+					
+						<!-- INFO MESSAGE FOR USER ENROLLMENT -->	
+						<aura:set attribute="else">
+							<div style="padding-left:6px;padding-right:6px">
+								<ui:message severity="info" closable="false"  >
+									{!$Label.c.Enrollment_Info}
+								</ui:message>
+							</div>
+						
+							<!-- EMAIL ENTERED BY USER TO BE USED FOR ENROLLMENT -->
+							<div class="slds-m-around--small" style="word-wrap: break-word;padding-left:6px;">{!$Label.c.Enrollment_Email_label} &nbsp;<strong>{!v.enrollWrapper.accountEmail}</strong></div>
+								
+							
+						</aura:set>
+					</aura:if> 
+					
+					<!-- BUTTON GROUPS PLACED AS FOOTER COMPRISING OF BACK AND ENROLL BUTTONS -->
+					<aura:set attribute="footer">
+						<div class="slds-wrap">
+								<lightning:buttonGroup class="slds-wrap slds-align_absolute-center slds-button-group">
+										<lightning:button disabled="{!v.enrollWrapper.isEnroldisabled}" class="slds-wrap slds-no-flex slds-m-top--medium slds-button  slds-button_brand" label="{!$Label.c.Enroll_Button}" onclick="{!c.enrollUser}"/>
+										&nbsp;&nbsp;&nbsp;
+										
+										
+										
+										<aura:if isTrue="{!v.enrollWrapper.isDisplayBack}">
+										<lightning:button disabled="{!v.enrollWrapper.isBackdisabled}" class="slds-wrap slds-no-flex slds-m-top--medium slds-button  slds-button_neutral" label="{!$Label.c.Back_Button}" onclick="{!c.goback}"/>
+										</aura:if>
+								</lightning:buttonGroup>
+							
+						</div>
+					</aura:set> 
+					   
+
+				</lightning:card>
+			</div>
+		</aura:if>
+	
+</aura:component>

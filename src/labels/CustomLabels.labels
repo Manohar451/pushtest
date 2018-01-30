@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>API_EmailField_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>API Name of Email Field in Accounts Object</shortDescription>
+        <value>API Name of Email field in Accounts Object</value>
+    </labels>
+    <labels>
+        <fullName>API_Endpoint_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label of APIEndpoint</shortDescription>
+        <value>API Endpoint</value>
+    </labels>
+    <labels>
+        <fullName>API_Key_HelpText</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Helptext of APIKey</shortDescription>
+        <value>API Key of SessionM API</value>
+    </labels>
+    <labels>
+        <fullName>API_Key_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label of APIKey</shortDescription>
+        <value>API Key</value>
+    </labels>
+    <labels>
+        <fullName>API_Secret_Helptext</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Helptext of APISecret</shortDescription>
+        <value>API Secret of SessionM API</value>
+    </labels>
+    <labels>
+        <fullName>API_Secret_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label of APISecret</shortDescription>
+        <value>API Secret</value>
+    </labels>
+    <labels>
+        <fullName>API_Version_Helptext</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Help Text of API Version</shortDescription>
+        <value>API Version of SessionM API</value>
+    </labels>
+    <labels>
+        <fullName>API_Version_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label of APIVersion</shortDescription>
+        <value>API Version</value>
+    </labels>
+    <labels>
+        <fullName>Account_Lookup</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>lookup for account</shortDescription>
+        <value>Account__c</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Button_Label</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Button Label</shortDescription>
+        <value>Activities</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Column_Header_Date</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Column Header Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Column_Header_Name</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Column Header Name</shortDescription>
+        <value>Activity</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Column_Header_Type</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Column Header Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Header</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Header</shortDescription>
+        <value>Activities</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Next_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Next Button</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Activities_Previous_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activities Previous Button</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>Activity_Note_For_Max_Records</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activity Note For Max Records</shortDescription>
+        <value>Note: Recent activities shown - Maximum</value>
+    </labels>
+    <labels>
+        <fullName>Activity_PageSize_HelpText</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activity Page Size HelpText</shortDescription>
+        <value>Default page size for pagination</value>
+    </labels>
+    <labels>
+        <fullName>An_Email_Or_External_Id_Is_Required</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User does not have an email address</shortDescription>
+        <value>An email address or external ID is required to create the account.</value>
+    </labels>
+    <labels>
+        <fullName>App_Settings_List_Settings_Label</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App Settings List Settings Label</shortDescription>
+        <value>General Settings</value>
+    </labels>
+    <labels>
+        <fullName>App_Settings_Main_Header</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App Settings Main Header</shortDescription>
+        <value>SessionM Settings</value>
+    </labels>
+    <labels>
+        <fullName>App_Settings_Protected_Settings_Label</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App Settings Protected Settings Label</shortDescription>
+        <value>API Settings</value>
+    </labels>
+    <labels>
+        <fullName>App_Settings_Sub_Header</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App Settings Sub Header</shortDescription>
+        <value>Managed Package Configuration</value>
+    </labels>
+    <labels>
+        <fullName>Back_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back Button</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Comping_Error_message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comping Error message For Suspended</shortDescription>
+        <value>The Compensation of Points is not allowed for Suspended users</value>
+    </labels>
+    <labels>
+        <fullName>Configuration_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cannot Use the component without configuration</shortDescription>
+        <value>Please configure SessionM App before usage. Navigation Path - Setup --&gt; Installed Packages --&gt; Configure.
+ Please connect with your administrator with these details.</value>
+    </labels>
+    <labels>
+        <fullName>ContextPathApps</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContextPathApps</shortDescription>
+        <value>/apps/</value>
+    </labels>
+    <labels>
+        <fullName>Context_Path_Activity_Service</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>contextpathtimelineservice</shortDescription>
+        <value>&amp;context_slugs=MMC_CUSTOMER_CAMPAIGNS</value>
+    </labels>
+    <labels>
+        <fullName>Context_Path_TimeLine</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>contextpathtimeline</shortDescription>
+        <value>/timelines/END_USER_MEMBER_STATEMENT?count=</value>
+    </labels>
+    <labels>
+        <fullName>CustomMetadataType_API_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>API Name of Salesforce to SessionM Mapping record</shortDescription>
+        <value>API Name of Salesforce to SessionM Mapping Record</value>
+    </labels>
+    <labels>
+        <fullName>Custom_Metadata_Type_Helptext</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Helptext for Custom Metadata Type</shortDescription>
+        <value>Please enter API Name of Custom Metadata SessionM to Salesforce API Mapping record. Please clone existing record to update. Navigation Path - Setup --&gt; Develop --&gt; Custom Metadata Types --&gt; SessionM Json Mapping --&gt; Manage SessionM Json Mappings --&gt; SessionM to Salesforce API Mapping.</value>
+    </labels>
+    <labels>
+        <fullName>Custom_Setings_Name</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name of Custom Settings</shortDescription>
+        <value>Default</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Button</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>Email_Address_Update_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Address Update Error</shortDescription>
+        <value>Error: The email address must be updated on the user’s Account record page first.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Different_Message_When_Account_Updates</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Different Message When Account Updates</shortDescription>
+        <value>As the account email field is updated, please update SessionM Loyalty email field to keep them in synchronization.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Field_DataType_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Field DataType Error</shortDescription>
+        <value>Error: The field entered is not of  Email Data Type</value>
+    </labels>
+    <labels>
+        <fullName>Email_Field_HelpText</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>helptext of Email field in accounts</shortDescription>
+        <value>API Name of Email field in Account Object</value>
+    </labels>
+    <labels>
+        <fullName>Email_Field_of_SessionM_User</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Field of SessionM User</shortDescription>
+        <value>smsfsc__Email__c</value>
+    </labels>
+    <labels>
+        <fullName>Enable_Enroll_in_Community</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enable Enroll in Community</shortDescription>
+        <value>Enable Enroll In Community</value>
+    </labels>
+    <labels>
+        <fullName>Enroll_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enroll Button</shortDescription>
+        <value>Enroll</value>
+    </labels>
+    <labels>
+        <fullName>Enroll_Email_Not_Present_Msg_End</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enrollment error partial message</shortDescription>
+        <value>field of Account Record</value>
+    </labels>
+    <labels>
+        <fullName>Enroll_Email_Not_Present_Partial_Msg</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enrollment error</shortDescription>
+        <value>For Enrollment in the Loyalty Program, Email is required in</value>
+    </labels>
+    <labels>
+        <fullName>Enroll_Service_Context</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ENROLL_SERVICE_CONTEXT</shortDescription>
+        <value>/users</value>
+    </labels>
+    <labels>
+        <fullName>Enrollment_Access_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User Doesn&apos;t have Access to Enroll</shortDescription>
+        <value>Please contact System Administrator for enabling enrollment feature</value>
+    </labels>
+    <labels>
+        <fullName>Enrollment_Email_label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label of email field</shortDescription>
+        <value>Email:</value>
+    </labels>
+    <labels>
+        <fullName>Enrollment_Error_Community</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community Enrollment Error</shortDescription>
+        <value>Please contact customer support for enrollment in the Loyalty Program</value>
+    </labels>
+    <labels>
+        <fullName>Enrollment_Info</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enrollment Info</shortDescription>
+        <value>User is not enrolled in the Loyalty Program. Please click on &apos;Enroll&apos; button to enroll the user.</value>
+    </labels>
+    <labels>
+        <fullName>Field_Does_Not_Exist</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field Does Not Exist</shortDescription>
+        <value>Error: Field Does not exist</value>
+    </labels>
+    <labels>
+        <fullName>General_Error_Message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Error Message</shortDescription>
+        <value>An error occurred.</value>
+    </labels>
+    <labels>
+        <fullName>General_Success_Message</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Success Message</shortDescription>
+        <value>Save successful.</value>
+    </labels>
+    <labels>
+        <fullName>Insufficient_Priviledges</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Insufficient Priviledges</shortDescription>
+        <value>Insufficient Privileges error. Please contact system adminstrator to enable permissions.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Data_Absent_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Loyalty Info Present</shortDescription>
+        <value>No loyalty information present at this time.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Details_Header_label</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Loyalty Details Label</shortDescription>
+        <value>Loyalty Details</value>
+    </labels>
+    <labels>
+        <fullName>Mandatory_Field_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error when mandatory field are left Blank</shortDescription>
+        <value>Error: All the fields are mandatory to save the data</value>
+    </labels>
+    <labels>
+        <fullName>Mappings_Not_Found</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mappings Not Found</shortDescription>
+        <value>Error: Mappings Not Found</value>
+    </labels>
+    <labels>
+        <fullName>MaxPointsReachedError</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MaxpointsError</shortDescription>
+        <value>Max allowable points to award a day has been reached</value>
+    </labels>
+    <labels>
+        <fullName>Max_Activity_Records_HelpText</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max Activity Records HelpText</shortDescription>
+        <value>Maximum number of Activities to be fetched from SessionM per Account</value>
+    </labels>
+    <labels>
+        <fullName>Max_Activity_Records_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max Activity Records Label</shortDescription>
+        <value>Max Activity Records</value>
+    </labels>
+    <labels>
+        <fullName>Max_Activity_Records_Message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max Activity Records Message</shortDescription>
+        <value>Error : Please enter an integer between 1 and 500</value>
+    </labels>
+    <labels>
+        <fullName>Missing_Fields_In_Json_Mapping_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missing Fields In Json Mapping Error</shortDescription>
+        <value>Error: One or more fields are missing from SessionM JSON Mapping. Please contact your System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Name_Field_In_Account</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>name field</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>No_Activities_Message</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Activities Message</shortDescription>
+        <value>No activities found.</value>
+    </labels>
+    <labels>
+        <fullName>PageSize_Error_Message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PageSize Error Message</shortDescription>
+        <value>Error: Please enter an integer between 1 and 50</value>
+    </labels>
+    <labels>
+        <fullName>Page_Size_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Page Size Label</shortDescription>
+        <value>Activity Page Size</value>
+    </labels>
+    <labels>
+        <fullName>Pattern_Mismatch_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message when url pattern is mismatched</shortDescription>
+        <value>Error: Please enter valid URL.</value>
+    </labels>
+    <labels>
+        <fullName>PointsComponentPointsFieldLabel</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name of Points field</shortDescription>
+        <value>Points</value>
+    </labels>
+    <labels>
+        <fullName>PointsComponent_CompPoints_Button_label</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Points Component button label</shortDescription>
+        <value>Comp Points</value>
+    </labels>
+    <labels>
+        <fullName>PointsComponent_Picklist_Field_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name of reason picklist field</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>PointsContextPath_Points</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PointsContextPathPoints</shortDescription>
+        <value>/points</value>
+    </labels>
+    <labels>
+        <fullName>PointsContextPoint_Users</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PointsContextPointUsers</shortDescription>
+        <value>/users/</value>
+    </labels>
+    <labels>
+        <fullName>PointsField_Empty_Error_Message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PointsFieldEmptyErrorMessage</shortDescription>
+        <value>Error: Points field cannot be blank</value>
+    </labels>
+    <labels>
+        <fullName>PointsURLSubstringUsers</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PointsURLSubstringUsers</shortDescription>
+        <value>/users/</value>
+    </labels>
+    <labels>
+        <fullName>PointsValidationError</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PointsValidationError</shortDescription>
+        <value>Error: Please enter an integer value</value>
+    </labels>
+    <labels>
+        <fullName>Read_Only_Fields_Not_Updatable_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read Only Fields Cannot Be Updated</shortDescription>
+        <value>Fields marked as Read-Only cannot be updated</value>
+    </labels>
+    <labels>
+        <fullName>ReasonCode_Button_Label</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCode Button Label</shortDescription>
+        <value>Reason  Codes for Comping Points</value>
+    </labels>
+    <labels>
+        <fullName>ReasonCode_Error_Message</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCodeErrorMessage</shortDescription>
+        <value>Error: Please select a Reason Code</value>
+    </labels>
+    <labels>
+        <fullName>ReasonCode_PageHeader_Text</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCodePageHeaderText</shortDescription>
+        <value>Reason Code Picklist Values</value>
+    </labels>
+    <labels>
+        <fullName>ReasonCodesContextPath_Priv</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCodesContextPathPriv</shortDescription>
+        <value>priv/</value>
+    </labels>
+    <labels>
+        <fullName>ReasonCodesContextPath_Reasons</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCodesContextPathReasons</shortDescription>
+        <value>/reasons</value>
+    </labels>
+    <labels>
+        <fullName>Reason_Code_PickList_Navigation_Path_Note</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reason Code PickList Navigation Path Note</shortDescription>
+        <value>Note:  To change the list of Reason Codes, please Navigate to Setup --&gt; Create  --&gt; Objects  ---&gt; SessionM Transaction  --&gt; Custom Fields &amp; Relationships  --&gt; Press Edit on left side of ReasonCodes</value>
+    </labels>
+    <labels>
+        <fullName>ReasoncodeTable_Left_Heading_Value</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasoncodeTable</shortDescription>
+        <value>API Name of Picklist</value>
+    </labels>
+    <labels>
+        <fullName>ReasoncodeTable_Right_Column_Heading_Value</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonCodeTable heading values</shortDescription>
+        <value>Picklist Value</value>
+    </labels>
+    <labels>
+        <fullName>Remote_Site_Settings_Note</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Short Note for RemoteSettings</shortDescription>
+        <value>Please add/update API endpoint to remote site settings. Navigation Path -&gt; Setup --&gt; Administer -&gt; Security Controls -&gt; Remote Site Settings -&gt; New Remote Site</value>
+    </labels>
+    <labels>
+        <fullName>SObject_Type_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SObject Type Is Not Account</shortDescription>
+        <value>Loyalty Information is only available in Account Page</value>
+    </labels>
+    <labels>
+        <fullName>Save_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>SessionM_Internal_Error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Session M Internal Error</shortDescription>
+        <value>Unexpected SessionM server error occurred.</value>
+    </labels>
+    <labels>
+        <fullName>SessionM_TimeOut_HelpText</fullName>
+        <categories>HelpText</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SessionM TimeOut_HelpText</shortDescription>
+        <value>Timeout duration in milliseconds</value>
+    </labels>
+    <labels>
+        <fullName>SessionM_TimeOut_Label</fullName>
+        <categories>FieldLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SessionM TimeOut Label</shortDescription>
+        <value>SessionM Timeout(milliseconds)</value>
+    </labels>
+    <labels>
+        <fullName>SessionM_User_SObjectType</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SobjectType for SessionM user</shortDescription>
+        <value>smsfsc__SessionMUser__c</value>
+    </labels>
+    <labels>
+        <fullName>Sm_Email_Field</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EMAIL_SM_FIELD</shortDescription>
+        <value>email</value>
+    </labels>
+    <labels>
+        <fullName>Sm_User_Profile</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>user profile</shortDescription>
+        <value>user_profile</value>
+    </labels>
+    <labels>
+        <fullName>SuccessMessage_PointsAPI</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message displayed when Points Added succesfully</shortDescription>
+        <value>Successfully Updated Points</value>
+    </labels>
+    <labels>
+        <fullName>TimeoutErrorMessage</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeoutErrorMessage</shortDescription>
+        <value>Error : Please enter an integer between 1 and 120,000</value>
+    </labels>
+    <labels>
+        <fullName>Update_Component_Header</fullName>
+        <categories>HeaderLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Component Header</shortDescription>
+        <value>Loyalty Details</value>
+    </labels>
+    <labels>
+        <fullName>Update_Profile_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Profile Button</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>Update_Validation_Error_Message</fullName>
+        <categories>ValidationErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Genral Update Validation Error</shortDescription>
+        <value>There are some errors in the page, please enter proper data.</value>
+    </labels>
+    <labels>
+        <fullName>User_Enrolled_Successfully</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User Enrolled Successfully</shortDescription>
+        <value>User Enrolled Successfully</value>
+    </labels>
+    <labels>
+        <fullName>User_Enrollment_Failure</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User Enrollment Failure</shortDescription>
+        <value>User Enrollment Failure :</value>
+    </labels>
+    <labels>
+        <fullName>User_Label</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USER</shortDescription>
+        <value>user</value>
+    </labels>
+    <labels>
+        <fullName>User_Updated_Success</fullName>
+        <categories>UIMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User Updated Success</shortDescription>
+        <value>User Updated Successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Validation_Error_Email</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message due to invalid email API name</shortDescription>
+        <value>Please enter valid API name</value>
+    </labels>
+    <labels>
+        <fullName>ViewUserURLSubstringContextPath</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ViewUserURLSubstringContextPath</shortDescription>
+        <value>/external/users/</value>
+    </labels>
+    <labels>
+        <fullName>ViewUserURLSubstringQueryString</fullName>
+        <categories>Technical</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ViewUserURLSubstringQueryString</shortDescription>
+        <value>?user[user_profile]=true</value>
+    </labels>
+    <labels>
+        <fullName>View_Compute_Points_Button</fullName>
+        <categories>ButtonLabel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Compute Points Button</shortDescription>
+        <value>Comp</value>
+    </labels>
+    <labels>
+        <fullName>ZeroPointsErrorMessage</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ZeroPointsErrorMessage</shortDescription>
+        <value>Error: Points cannot be 0</value>
+    </labels>
+    <labels>
+        <fullName>access_denied</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Points Error</shortDescription>
+        <value>Comping of Points is not enabled in this API</value>
+    </labels>
+    <labels>
+        <fullName>external_id_already_used</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User with given external_id is already enrolled</shortDescription>
+        <value>The external ID used to create the customer’s account is already in use.</value>
+    </labels>
+    <labels>
+        <fullName>incorrect_api_params</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HTTP Basic: Access denied</shortDescription>
+        <value>HTTP  Access denied : Please provide correct configuration parameters</value>
+    </labels>
+    <labels>
+        <fullName>internal_server_error</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Session M Internal Error</shortDescription>
+        <value>Unexpected SessionM server error occurred.</value>
+    </labels>
+    <labels>
+        <fullName>invalid_api_key</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Api Key</shortDescription>
+        <value>Wrong API key passed in</value>
+    </labels>
+    <labels>
+        <fullName>no_stream_view_found</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Response when no access to activities</shortDescription>
+        <value>Activities are not enabled in this API</value>
+    </labels>
+    <labels>
+        <fullName>user_not_found</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User not found</shortDescription>
+        <value>No customer found for update request</value>
+    </labels>
+    <labels>
+        <fullName>validation</fullName>
+        <categories>ErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User with given email is already enrolled</shortDescription>
+        <value>The email address used to create the customer’s account is already in use.</value>
+    </labels>
+</CustomLabels>
